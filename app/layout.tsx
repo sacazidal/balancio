@@ -4,11 +4,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { inter } from "@/lib/fonts";
 import ToggleTheme from "@/components/toggle-theme";
 import { colorBackground } from "@/utils/color-vars";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Balancio",
+  title: "balancio.",
   description:
-    "Ваш идеальный рацион — по одному клику. На основе ваших данных, целей и образа жизни",
+    "balancio. — это персонализированный помощник по питанию, который помогает находить баланс между калориями, БЖУ и образом жизни, основываясь на твоих данных: возраст, вес, рост, активность и пол.",
 };
 
 export default function RootLayout({
@@ -25,7 +26,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main>{children}</main>
+          <>
+            <Header />
+            <main className="max-w-screen-2xl mx-auto px-5">{children}</main>
+          </>
           <ToggleTheme />
         </ThemeProvider>
       </body>
